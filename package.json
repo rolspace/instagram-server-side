@@ -1,5 +1,5 @@
 {
-  "name": "instagram-api-server-flow",
+  "name": "instagram-server-side-flow",
   "version": "1.0.0",
   "author": "Rolando Ramos",
   "description": "",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rolspace/instagram-api-server-flow"
+    "url": "https://github.com/rolspace/instagram-server-side-flow"
   },
   "devDependencies": {
     "chai": "^3.5.0",
