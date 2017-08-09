@@ -17,7 +17,7 @@ In order to try it out, just follow these steps:
 	- INSTAGRAM_CLIENTID: Client ID assigned after creating the Instagram client
 	- INSTAGRAM_SECRET: Secret string assigned after creating the Instagram client
 	- PORT: port for the Express server (default: 4000)
-	- REDIRECT_URI: URI that Instagram will use to redirect to, after the user has authorized the application (default: http://localhost:4000/profile.html)
+	- REDIRECT_URI: URI that Instagram will use to redirect to, after the user has authorized the application. You will define this URI redirect when you create the Instagram client (default: http://localhost:4000/profile.html)
 
 5. Open a Terminal at the root of the repository's folder and run npm start
 6. Browse to http://localhost:4000/
