@@ -1,38 +1,38 @@
 doctype html
 html
-	head
-		title="Instagram API Server Side Flow"
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		link(rel="stylesheet" href="client.css")
-	body
-		div(id="container")
-		script.
-			var xhr = new XMLHttpRequest();
-			var url = "/api/auth";
+  head
+    title="Instagram API Server Side Flow"
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="client.css")
+  body
+    div(id="container")
+    script.
+      var xhr = new XMLHttpRequest();
+      var url = "/api/auth";
 
-			var params = (new URL(document.location)).searchParams;
-			var value = params.get("code");
+      var params = (new URL(document.location)).searchParams;
+      var value = params.get("code");
 
-			xhr.open("POST", url, true);
-			xhr.setRequestHeader("Content-type", "application/json");
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-type", "application/json");
 
-			xhr.onreadystatechange = function() {
-				if(xhr.readyState == 4 && xhr.status == 200) {
-					var result = document.getElementById("container");
-					var response = JSON.parse(xhr.responseText);
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+          var result = document.getElementById("container");
+          var response = JSON.parse(xhr.responseText);
 
-					console.log(response);
+          console.log(response);
 
-					result.innerHTML = 
-					"<div class='picture'><img src='" + response.user.profile_picture + "'></div>" +
-					"<div class='text'>" +
-						"<div class='username'>" + response.user.username + "</div>" +
-						"<div class='fullname'>" + response.user.full_name + "</div>" +
-						"<div>ID: " + response.user.id + "</div>" +
-						"<div>Access Token: " + response.access_token + "</div><br />" +
-						"<div><a id='button' href='/' class='profile'>Go to index</a></div>" +
-					"</div>";
-				}
-			}
+          result.innerHTML =
+          "<div class='picture'><img src='" + response.user.profile_picture + "'></div>" +
+          "<div class='text'>" +
+            "<div class='username'>" + response.user.username + "</div>" +
+            "<div class='fullname'>" + response.user.full_name + "</div>" +
+            "<div>ID: " + response.user.id + "</div>" +
+            "<div>Access Token: " + response.access_token + "</div><br />" +
+            "<div><a id='button' href='/' class='profile'>Go to index</a></div>" +
+          "</div>";
+        }
+      }
 
-			xhr.send(JSON.stringify({ code: value }));
+      xhr.send(JSON.stringify({ code: value }));

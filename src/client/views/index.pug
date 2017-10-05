@@ -1,18 +1,18 @@
 doctype html
 html
-	head
-		title="Instagram API Server Side Flow"
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		link(rel="stylesheet" href="client.css")
-	body
-		div(id="container")
-			button(id="button") Login to Instagram
-	script.
-		var button = document.getElementById("button");
+  head
+    title="Instagram API Server Side Flow"
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="client.css")
+  body
+    div(id="container")
+      button(id="button") Login to Instagram
+  script.
+    var button = document.getElementById("button");
 
-		button.addEventListener('click', function() {
-			var clientId = "#{clientid}";
-			var redirectUri = "#{redirectUri}"
+    button.addEventListener('click', function() {
+      var clientId = "#{clientid}";
+      var redirectUri = "#{redirectUri}"
 
-			window.location.replace("https://api.instagram.com/oauth/authorize/?client_id=" + clientId  + "&redirect_uri=" + redirectUri + "&response_type=code");
-		}, false);
+      window.location.replace("https://api.instagram.com/oauth/authorize/?client_id=" + clientId  + "&redirect_uri=" + redirectUri + "&response_type=code");
+    }, false);
