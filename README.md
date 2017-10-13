@@ -1,6 +1,6 @@
 ## Instagram Server-Side Flow
 
-This is a small demo project to illustrate how to authenticate the Instagram API using the server-side flow (https://www.instagram.com/developer/authentication/).
+This is a demo project to illustrate how to authenticate a client with the Instagram API using the server-side flow (https://www.instagram.com/developer/authentication/).
 
 In order to try it out, just follow these steps:
 
