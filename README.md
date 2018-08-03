@@ -1,4 +1,6 @@
-## Instagram Server-Side Flow
+# Instagram Server-Side Flow
+
+[![Build Status](https://travis-ci.org/rolspace/instagram-server-side-flow.svg?branch=master)](https://travis-ci.org/rolspace/instagram-server-side-flow)
 
 This is a demo project to illustrate how to authenticate a client with the Instagram API using the server-side flow (https://www.instagram.com/developer/authentication/).
 
