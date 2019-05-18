@@ -1,23 +1,24 @@
-const http = require('http')
-const express = require('express')
 const bodyParser = require('body-parser')
-const auth = require('./routes/auth')
+const express = require('express')
+const http = require('http')
+const path = require('path')
 const constants = require('./common/constants')
+const auth = require('./routes/auth')
 
 const app = express()
 
-function init() {
-  app.set('views', __dirname + '/client/views')
+function init () {
+  app.set('views', path.join(__dirname, '/client/views'))
   app.set('view engine', 'pug')
   app.use(bodyParser.json())
-  app.use(express.static(__dirname + '/client/styles'))
+  app.use(express.static(path.join(__dirname, '/client/styles')))
 
   app.get('/', (req, res) => {
-    console.log(process.env.REDIRECT_URI || "http://localhost:4000/profile.html")
+    console.log(process.env.REDIRECT_URI || 'http://localhost:4000/profile.html')
     res.render('index',
       {
         clientid: process.env.INSTAGRAM_CLIENTID,
-        redirectUri: process.env.REDIRECT_URI || "http://localhost:4000/profile.html"
+        redirectUri: process.env.REDIRECT_URI || 'http://localhost:4000/profile.html'
       })
   })
   app.get('/profile.html', (req, res) => {
