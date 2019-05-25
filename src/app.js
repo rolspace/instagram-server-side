@@ -18,7 +18,7 @@ function init () {
     res.render('index',
       {
         clientid: process.env.INSTAGRAM_CLIENTID,
-        redirectUri: process.env.REDIRECT_URI || 'http://localhost:4000/profile.html'
+        redirectUri: process.env.REDIRECT_URI || 'http://localhost:4000/profile.html',
       })
   })
   app.get('/profile.html', (req, res) => {
@@ -35,5 +35,5 @@ function init () {
 }
 
 module.exports = {
-  init: init
+  init: init,
 }

@@ -9,7 +9,7 @@ describe('Auth Route', () => {
     beforeEach(() => {
       res = {
         send: sinon.stub().returnsThis(),
-        status: sinon.stub().returnsThis()
+        status: sinon.stub().returnsThis(),
       }
     })
 
@@ -24,8 +24,8 @@ describe('Auth Route', () => {
     it('responds with a 500 http status code if the OATH Token request fails', () => {
       let req = {
         body: {
-          'code': 'some_code'
-        }
+          'code': 'some_code',
+        },
       }
 
       const requestStub = sinon.stub(request, 'post').yields('some error', null, null)
@@ -40,8 +40,8 @@ describe('Auth Route', () => {
     it('responds with a 200 http status code if the OATH Token request is successful', () => {
       let req = {
         body: {
-          'code': 'some-code'
-        }
+          'code': 'some-code',
+        },
       }
 
       let oathBody = '{ "access_token": "some_token", "user": { "id": "some_id", "username": "some_username" } }'
@@ -58,8 +58,8 @@ describe('Auth Route', () => {
     it('responds with the same http status code of the OATH Token request if it does not return a 200 response', () => {
       let req = {
         body: {
-          'code': 'some-code'
-        }
+          'code': 'some-code',
+        },
       }
 
       const requestStub = sinon.stub(request, 'post').yields(null, { statusCode: 400 }, null)

@@ -10,7 +10,7 @@ function postInstagramAuth (req, res) {
       client_secret: process.env.INSTAGRAM_SECRET,
       code: req.body.code,
       grant_type: 'authorization_code',
-      redirect_uri: process.env.REDIRECT_URI || 'http://localhost:4000/profile.html'
+      redirect_uri: process.env.REDIRECT_URI || 'http://localhost:4000/profile.html',
     }
 
     request.post({ url: 'https://api.instagram.com/oauth/access_token', form: form },
@@ -27,5 +27,5 @@ function postInstagramAuth (req, res) {
 }
 
 module.exports = {
-  post: postInstagramAuth
+  post: postInstagramAuth,
 }
